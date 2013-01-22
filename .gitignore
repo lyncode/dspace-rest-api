@@ -1,0 +1,8 @@
+# IDE files
+
+.project
+.settings
+.classpath
+
+# Maven compiled files
+target/
