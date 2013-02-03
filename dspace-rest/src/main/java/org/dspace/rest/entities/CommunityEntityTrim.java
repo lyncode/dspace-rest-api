@@ -26,6 +26,7 @@ public class CommunityEntityTrim extends CommunityEntityId {
     List<Object> collections = new ArrayList<Object>();
     List<Object> subCommunities = new ArrayList<Object>();
     private Object parentCommunity;
+    private int logoId;
 
     public CommunityEntityTrim() {
 
@@ -35,6 +36,7 @@ public class CommunityEntityTrim extends CommunityEntityId {
         super(uid, context);
         this.handle = res.getHandle();
         this.name = res.getName();
+        this.logoId = (res.getLogo() != null) ? res.getLogo().getID() : -1;
 
         boolean trim = uparams.getTrim();
         boolean collections = uparams.getCollections();
@@ -91,6 +93,10 @@ public class CommunityEntityTrim extends CommunityEntityId {
 
     public String getName() {
         return name;
+    }
+    
+    public int getLogoId () {
+    	return logoId;
     }
 
     public String getHandle() {
