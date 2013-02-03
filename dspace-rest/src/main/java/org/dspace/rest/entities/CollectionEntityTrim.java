@@ -22,6 +22,7 @@ public class CollectionEntityTrim extends CollectionEntityId {
     private String name;
     private String handle;
     private List<Object> communities = new ArrayList<Object>();
+    private int logoId;
 
     public CollectionEntityTrim() {
 
@@ -32,6 +33,7 @@ public class CollectionEntityTrim extends CollectionEntityId {
 
         this.name = res.getName();
         this.handle = res.getHandle();
+        this.logoId = (res.getLogo() != null) ? res.getLogo().getID() : -1;
 
         Community[] communities = res.getCommunities();
         for (Community community : communities) {
@@ -53,6 +55,10 @@ public class CollectionEntityTrim extends CollectionEntityId {
 
     public String getName() {
         return name;
+    }
+    
+    public int getLogoId () {
+    	return logoId;
     }
 
     public String getHandle() {
